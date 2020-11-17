@@ -106,6 +106,8 @@ install:
   - if [ "${SPEC}" = "linux-g++-64" ]; then
         wget --quiet https://s3-us-west-2.amazonaws.com/qgroundcontrol/dependencies/Qt5.12.6-gcc_64-min.tar.bz2 &&
         tar jxf Qt5.12.6-gcc_64-min.tar.bz2 -C /tmp &&
+        echo "/tmp/Qt5.12-gcc_64/5.12.6/gcc_64/lib" | sudo tee -a /etc/ld.so.conf.d/qt512.conf &&
+        sudo ldconfig &&
         export PATH=/tmp/Qt5.12-gcc_64/5.12.6/gcc_64/bin:$PATH
         ;
     fi

@@ -44,6 +44,7 @@ MacBuild {
 
 LinuxBuild {
     CONFIG  += qesp_linux_udev
+    CONFIG  += DISABLE_VIDEOSTREAMING
 }
 
 WindowsBuild {

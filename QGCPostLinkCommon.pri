@@ -107,9 +107,13 @@ LinuxBuild {
     !contains(DEFINES, __rasp_pi2__) {
         # Some Qt distributions link with *.so.56
         QT_LIB_LIST += \
-            libicudata.so.56 \
-            libicui18n.so.56 \
-            libicuuc.so.56
+            libicudata.so \
+            libicui18n.so \
+            libicuuc.so
+        #QT_LIB_LIST += \
+        #    libicudata.so.56 \
+        #    libicui18n.so.56 \
+        #    libicuuc.so.56
     }
 
     for(QT_LIB, QT_LIB_LIST) {
